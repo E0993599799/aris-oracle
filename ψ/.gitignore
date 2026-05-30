@@ -1,0 +1,4 @@
+# Sensitive memory — do not commit
+inbox/private/
+*.env
+*.secret
