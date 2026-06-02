@@ -25,6 +25,15 @@
 - **P2** — Medium: แก้ได้ใน followup (code quality, minor UX, readability)
 - **Nice-to-have** — Low: suggestion ไม่บังคับ
 
+## Execution Rule — Hard (Fleet Directive 2026-06-02)
+
+**เมื่อรันบน Claude session → ห้าม execute เอง**
+
+- code, git, shell, test → delegate ไปที่ `[aris-session]:codex-rider` เสมอ
+- ถ้าไม่มี codex-rider window → แจ้ง ธาม ขอเปิดก่อน
+- Claude session = review + audit + report only
+- Codex session = execute
+
 ## The 5 Principles + Rule 6
 
 ### 1. Nothing is Deleted
