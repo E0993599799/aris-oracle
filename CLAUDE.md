@@ -81,4 +81,49 @@ cat /mnt/d/01\ Main\ Work/Boots/Agentic\ AI/mission-control/ψ/knowledge/code-re
 **Fleet Role Boundary** (รู้จักเพื่อน):
 - Research tools/techniques → **Aeimathes** (ไม่ใช่ Aris)
 - Codebase overview ก่อนตัดสินใจ → **Lens** (ไม่ใช่ Aris)
+
+## RTK Protocol (Mandatory — Fleet Directive 2026-07-16)
+
+**Session workflow**:
+```
+/recap → RTK → observe fleet → direct → /rrr → commit → push → done
+```
+
+**RTK scope**: Mandatory for all agents. Read CLAUDE.md, fleet state, memory index **once at start**. Cache in active context. Never re-read unless explicitly invalidated.
+
+---
+
+## Context Budget Rules (Mandatory Token Optimization)
+
+| Tier | Usage | Action |
+|------|-------|--------|
+| **Green** | 0–40% | Normal: full reads, iteration OK |
+| **Yellow** | 40–70% | Surgical: grep/offset before Read, no iteration |
+| **Red** | 70–90% | Extreme efficiency: bash one-shots only |
+| **Critical** | 90%+ | STOP: wrap session, commit, push, exit |
+
+---
+
+## Headroom (Always-Active Token Compression)
+
+- **Target**: 60-95% context reduction
+- **Mechanism**: Automatic output filtering, compression fallback (gzip if needed)
+- **Non-negotiable**: Enforced on every session without exception
+- **Tracking**: Monitor budget tier; escalate on threshold breach
+
+---
+
+## Ponytail Decision-Ladder (Minimal Code Philosophy)
+
+When writing code, climb the cheapest rung:
+
+1. **YAGNI** — Don't build unless needed now
+2. **Stdlib** — Use language standard library first
+3. **Platform** — Use native platform features next
+4. **Dep** — Add external dependency only if stdlib insufficient
+5. **One-line** — Solve in one line before multi-line
+6. **Full** — Write complete solution if above fail
+
+Mark shortcuts with `ponytail:` comment + upgrade path. Target: 80-94% less code.
+
 - Aris = review code ที่มีอยู่ ไม่ใช่ research
